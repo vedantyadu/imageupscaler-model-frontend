@@ -1,36 +1,35 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Image Upscaler
+#### Image Upscaler is a web app that uses SRCNN and SRGAN models to increase the resolution of your low resolution images without losing quality.  
 
-## Getting Started
+This repository contains the frontend for Image Upscaler created using NextJS.
 
-First, run the development server:
+#### 🔗 [Backend Github repository](https://github.com/vedantyadu/imageupscaler-model-backend)  
+## Screenshots
+#### Upload view
+![Upload View](screenshots/uploadview.png)
+#### Upscale view
+![Upload View](screenshots/upscaleview.png)  
 
+## Getting started
+### Installing dependencies
+```bash
+npm install
+```
+### Environment variables
+Create a `.env` file and put the following variables inside the file :
+- `DATABASE_URL`
+- `GOOGLE_OAUTH_CLIENT_SECRET`
+- `GOOGLE_OAUTH_TOKEN_URI`
+- `JWT_ACCESS_PRIVATE_KEY`
+- `JWT_REFRESH_PRIVATE_KEY`
+- `NEXT_SERVER_URL`
+- `UPSCALE_BACKEND_URL`
+
+### Prisma migrations
+```bash
+prisma migrate dev/deploy
+```
+### Start the development server
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.

@@ -1,12 +1,10 @@
 import axios from 'axios'
 
 
-const backend_url = 'http://localhost:3000'
+const backend_url = process.env.NEXT_SERVER_URL as string
 
 
-export const axiosbackend = axios.create({
-  baseURL: backend_url
-})
+export const axiosbackend = axios.create()
 
 axiosbackend.interceptors.response.use((response) => response, async (error) => {
 
@@ -16,7 +14,7 @@ axiosbackend.interceptors.response.use((response) => response, async (error) => 
     throw error
   }
   try {
-    const res = await axios.get(backend_url + '/api/auth/refresh')
+    const res = await axios.get('/api/auth/refresh')
     return axiosbackend(config)
   }
   catch (err) {

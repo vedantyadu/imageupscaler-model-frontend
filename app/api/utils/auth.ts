@@ -41,7 +41,7 @@ export async function getGoogleTokens(code: string) {
       code: code,
       client_id : '1093787396713-g4mt6s0ful8afc380audvnsfs23pa5tq.apps.googleusercontent.com',
       client_secret : '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',
-      redirect_uri : `${process.env.NEXT_URL}/redirect`,
+      redirect_uri : `${process.env.NEXT_SERVER_URL}/redirect`,
       grant_type : "authorization_code"
     })
     return res.data
